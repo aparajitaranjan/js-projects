@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast Notification App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="buttons">
+      <button onclick="showToast('success')">Success</button>
+      <button onclick="showToast('error')">Error</button>
+      <button onclick="showToast('invalid')">Invalid</button>
+    </div>
+    <div id="toastBox"></div>
+    <script>
+      const toastMessages = {
+        success: `<i class="bi bi-check-circle-fill"></i> Successfully submitted`,
+        error: `<i class="bi bi-x-circle-fill"></i> Please fix the error!`,
+        invalid: `<i class="bi bi-exclamation-circle-fill"></i> Invalid input, check again`,
+      };
+
+      const showToast = (type) => {
+        const toastBox = document.getElementById('toastBox');
+        const toast = document.createElement('div');
+        toast.classList.add('toast', type);
+        toast.innerHTML = toastMessages[type];
+
+        toastBox.appendChild(toast);
+
+        setTimeout(() => {
+          toast.remove();
+        }, 5000);
+      };
+    </script>
+  </body>
+</html>
