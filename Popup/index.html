@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <button type="submit" class="btn" onclick="openPopup()">
+                Submit
+            </button>
+            <div class="popup" id="popup">
+                <h2>Sorry!</h2>
+                <p>This feature is coming soon. Stay tuned!</p>
+                <button onclick="closePopup()">OK</button>
+            </div>
+        </div>
+        <script>
+            let popup = document.getElementById('popup');
+            const openPopup = () => {
+                popup.classList.add('open-popup');
+                popup.style.visibility = 'visible'; // Ensure popup is visible
+            };
+
+            const closePopup = () => {
+                popup.classList.remove('open-popup');
+                popup.style.visibility = 'hidden'; // Hide popup again
+            };
+        </script>
+    </body>
+</html>
