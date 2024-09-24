@@ -41,7 +41,7 @@ const validateEmail = () => {
         return false;
     }
     if (!email.match(/^[A-Za-z]\._\-[0-9][@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-        emailError.innerHTML = 'Email Invalid';
+        emailError.innerHTML = 'Email is Invalid';
         return false;
     }
     emailError.innerHTML = '<i class="fas fa-check-circle"></i>';
