@@ -40,7 +40,7 @@ const validateEmail = () => {
         emailError.innerHTML = 'Email is required';
         return false;
     }
-    if (!email.match(/^[A-Za-z]\._\-[0-9][@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    if (!email.match(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)) {
         emailError.innerHTML = 'Email is Invalid';
         return false;
     }
